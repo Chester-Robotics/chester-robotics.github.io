@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chester V1 - Intelligent Service Robot</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B0000","primary-hover": "#660000",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#161616",
+                        "surface-accent": "#202020",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #101622;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #8B0000;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e5e7eb] dark:border-b-[#262626] px-6 lg:px-10 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="h-10 w-auto">
+                <a href="index.html"><img alt="Chester Robotics Logo" class="h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5W-0KdhB0If-qbkOA2jIheEYCY9PDxy1GossAvglmZKBdydUV_mkv79KS538GAmOUwrYHntkGZL33HrzuRWUAVahJVg1SwR6CKKukUZkIz84rLvHkvqY40DzSjFrmq2c7AzxfaHZzoD4BrSd1xrg0bbprR6BCKJMakLDkZ2q0uWcBXvSARSLAiTNr-jd-KhpCp-KkUciRDj5ZPl6tUtKUiQjApl4rt-Jd4algpL4VkxehAaAEiZQd8xakk8Xn2v-j4s7HWcoRcn4"/></a>
+</div>
+</div>
+<div class="hidden lg:flex flex-1 justify-center gap-8">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="code_2.html">Products</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="code_4.html">Solutions</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="code_6.html">Contact</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="code_5.html">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 border border-[#e5e7eb] dark:border-[#333] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-[#202020] transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-primary-hover text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-[0_0_15px_rgba(139,0,0,0.3)]">
+<span class="truncate">Contact Sales</span>
+</button>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col max-w-[1440px] mx-auto w-full">
+<div class="flex flex-wrap gap-2 px-6 lg:px-12 py-6">
+<a class="text-[#64748b] dark:text-[#9ca3af] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-[#64748b] dark:text-[#9ca3af] text-sm font-medium leading-normal">/</span>
+<a class="text-[#64748b] dark:text-[#9ca3af] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Service Robots</a>
+<span class="text-[#64748b] dark:text-[#9ca3af] text-sm font-medium leading-normal">/</span>
+<span class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Chester V1</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 px-6 lg:px-12 pb-12">
+<div class="lg:col-span-7 flex flex-col">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-dark group border border-[#262626]">
+<div class="absolute inset-0 z-10 opacity-20 pointer-events-none" style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+<div class="absolute inset-0 flex items-center justify-center bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Full body shot of Chester V1 robot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCndA-T0UWWf2gixCx6hx3SQ8PicFZwfz8I29K8T9E7ffm374b0QOfJ4XQuqkUO09d8BlTFdT0dkLQ5yzWnq3uvX4rfS0H2mL7CHFwxjhYPb2k0YRyKkWCBrm4sw7qhH3L24nHc0g8nl-igqMft3Mi_AzBy5uHmHtNizPwSEFt2UggS6yz-GnVrvGQkB-XSVGzQpDcGRawHOwS3cai3CudutqG88aUsfK2QVS38UZ7fe1YaPTUiT3dJbZ1Dxt8tcbxwEXFb00VjVUI");'>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-40"></div>
+</div>
+<div class="absolute top-4 left-4 z-20 bg-background-dark/80 backdrop-blur-md border border-primary/30 rounded-full px-3 py-1 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-xs font-bold text-white tracking-wide uppercase">AI Active</span>
+</div>
+</div>
+<div class="flex gap-4 mt-4 overflow-x-auto pb-2 custom-scrollbar">
+<div class="w-24 h-16 rounded-lg bg-surface-dark border border-primary/50 cursor-pointer overflow-hidden relative shrink-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of robot head screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBu1oh4T0oUGvJwRf8ouB57k3qnJFKXTByuqYdxADH3vYug4jWLnvWVHdXQCEaks8aN3qHwtMi_m9IzZPcexipHF8SFOPG_907_qwcVR1JrOq4BtZQVI88n9fwmxxsC3czWgN1-TO1fdY8J7oiliMor_JkErnvP7mmKQ6vfX7BsT1DXfVNJYs7TO0Zw4P329Wq8GZ-oaX6_JbZMFx13uM5u-f4gVDCRTc1zH2tToYlUYoS5IEct_44hzlsCckuf8xV2mvp6V5ZQr6I");'></div>
+</div>
+<div class="w-24 h-16 rounded-lg bg-surface-dark border border-[#333] hover:border-primary/50 cursor-pointer overflow-hidden relative shrink-0 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 hover:opacity-100" data-alt="Studio full body shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7v8cCghuV41Pkxaq6bW0RrjsvTlqxXut1qkXt5UKwg5L6qy-t6Nsr3h2QJPbim6yn-EP0x0IZPORY0C_5M41fP5gIVArQ7G7bf9KV_opXR_Ydwc5FHaOBIgy6AfGIVQpQaLNLpKpyDZaCL1JSG7wqYaOgHMLJ3S_pjdFfGzxh514MIBMN35AYsIEqTMXFbYzUW3tBvIZp9mLWwMwt2bUnU6ImDPPIht5dMLRk6Sp7ZVilitBKfDRD8Sbf5yDJMCruONtTtragrrs");'></div>
+</div>
+<div class="w-24 h-16 rounded-lg bg-surface-dark border border-[#333] hover:border-primary/50 cursor-pointer overflow-hidden relative shrink-0 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 hover:opacity-100" data-alt="Schematic wireframe view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWd-eobtILbwgjnHPmy7JkU5NuGVLXbZXJvOEQBAzRUT4mveRlV0913UpPuUZSf9KkDAJablRamQC93IB1aK3gdi0Gtq81X1ZLYuIJA5hB8Q9i-0Nrjots0FEkyyL9yb2U69QR2ths6wma5Qu7uQKmYD74G8mOWmUD5hnjnEagneEb8lTiB8iJid0lFzzgwXr9UbZfmUpXpfNQQItKk95xKuELQ1Bo5UppTF2RpYurLHVb6L8HOP_VQCUB_kl5Bm0ITAeJdJsUZuk");'></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="mb-2 flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">smart_toy</span>
+                Intelligent Service Series
+            </div>
+<h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Chester V1 <span class="text-[#9ca3af] block text-2xl lg:text-3xl mt-2 font-normal">Intelligent Service Robot</span></h1>
+<p class="text-[#9ca3af] text-lg leading-relaxed mb-8">
+                Chester V1 redefines human-robot collaboration with its signature friendly OLED face and robust red chest plating. Equipped with advanced AI for natural interaction and autonomous navigation in complex environments.
+            </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-4 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[#9ca3af] text-sm">Payload</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">weight</span>
+</div>
+<div class="text-2xl font-bold text-white">15 <span class="text-sm font-normal text-[#9ca3af]">kg</span></div>
+</div>
+<div class="p-4 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[#9ca3af] text-sm">Battery Life</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">battery_charging_full</span>
+</div>
+<div class="text-2xl font-bold text-white">12 <span class="text-sm font-normal text-[#9ca3af]">hours</span></div>
+</div>
+<div class="p-4 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[#9ca3af] text-sm">Navigation</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">radar</span>
+</div>
+<div class="text-lg font-bold text-white pt-1">AI-Powered <span class="text-sm font-normal text-[#9ca3af] block">SLAM + Vision</span></div>
+</div>
+<div class="p-4 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[#9ca3af] text-sm">Interface</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">face</span>
+</div>
+<div class="text-lg font-bold text-white pt-1">OLED Face <span class="text-sm font-normal text-[#9ca3af] block">Expressive UI</span></div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex-1 flex items-center justify-center gap-2 h-12 px-6 bg-primary hover:bg-primary-hover text-white rounded-lg font-bold text-base transition-all hover:shadow-[0_0_20px_rgba(139,0,0,0.4)]">
+<span>Pre-order Now</span>
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 h-12 px-6 bg-transparent border border-[#262626] hover:border-white text-white rounded-lg font-bold text-base transition-all">
+<span class="material-symbols-outlined">description</span>
+<span>Request Specs</span>
+</button>
+</div>
+</div>
+</div>
+<div class="sticky top-[64px] z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#e5e7eb] dark:border-[#262626] mt-8">
+<div class="px-6 lg:px-12 flex gap-8 overflow-x-auto custom-scrollbar">
+<button class="py-4 border-b-2 border-primary text-primary font-bold text-sm tracking-wide">Features &amp; Analytics</button>
+<button class="py-4 border-b-2 border-transparent text-[#9ca3af] hover:text-white font-medium text-sm tracking-wide transition-colors">Case Studies</button>
+<button class="py-4 border-b-2 border-transparent text-[#9ca3af] hover:text-white font-medium text-sm tracking-wide transition-colors">Documentation</button>
+<button class="py-4 border-b-2 border-transparent text-[#9ca3af] hover:text-white font-medium text-sm tracking-wide transition-colors">Software</button>
+</div>
+</div>
+<div class="px-6 lg:px-12 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2 space-y-12">
+<section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-[#8B0000]/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">sentiment_satisfied</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">AI Interaction</h3>
+<p class="text-[#9ca3af] text-sm leading-relaxed">
+                            The OLED screen-face displays real-time expressions, making human-robot collaboration intuitive and friendly.
+                        </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-[#8B0000]/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">explore</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Autonomous Navigation</h3>
+<p class="text-[#9ca3af] text-sm leading-relaxed">
+                            Advanced SLAM and LiDAR sensors allow Chester to navigate dynamic environments safely without human input.
+                        </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-[#8B0000]/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">design_services</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Sleek Design</h3>
+<p class="text-[#9ca3af] text-sm leading-relaxed">
+                            Featuring signature red chest plating for durability and visibility, combined with a modern, approachable form factor.
+                        </p>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                    Performance Metrics
+                </h3>
+<div class="bg-surface-dark border border-[#262626] rounded-2xl p-6 lg:p-8">
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<h4 class="text-white font-medium">Path Planning Efficiency</h4>
+<span class="text-primary text-sm font-bold">99.2% Success Rate</span>
+</div>
+<div class="h-48 flex items-end justify-between gap-2 lg:gap-4 px-2">
+<div class="w-full bg-[#202020] rounded-t-sm h-[30%] hover:bg-primary/60 transition-all relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">10ms</div>
+</div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[45%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[50%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[75%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-primary rounded-t-sm h-[90%] shadow-[0_0_15px_rgba(139,0,0,0.5)]"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[85%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[60%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[40%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[55%] hover:bg-primary/60 transition-all"></div>
+<div class="w-full bg-[#202020] rounded-t-sm h-[35%] hover:bg-primary/60 transition-all"></div>
+</div>
+<div class="flex justify-between text-xs text-[#64748b] mt-2 font-mono">
+<span>Complex Environment</span>
+<span>Standard</span>
+<span>Open Space</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 pt-8 border-t border-[#262626]">
+<div class="flex items-center gap-4">
+<div class="relative size-16 shrink-0">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<path class="text-[#202020]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="4"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="96, 100" stroke-width="4"></path>
+</svg>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-white">96%</div>
+</div>
+<div>
+<div class="text-white font-bold text-sm">Interaction Success</div>
+<div class="text-[#9ca3af] text-xs">Positive user feedback</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative size-16 shrink-0">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<path class="text-[#202020]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="4"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-width="4"></path>
+</svg>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-white">12h</div>
+</div>
+<div>
+<div class="text-white font-bold text-sm">Operation Time</div>
+<div class="text-[#9ca3af] text-xs">Continuous runtime</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold text-white mb-6">Technical Specifications</h3>
+<div class="overflow-hidden rounded-xl border border-[#262626] bg-surface-dark">
+<table class="w-full text-left text-sm text-[#9ca3af]">
+<tbody class="divide-y divide-[#262626]">
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white w-1/3">Dimensions</td>
+<td class="px-6 py-4">450 x 450 x 1200 mm</td>
+</tr>
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Weight</td>
+<td class="px-6 py-4">42 kg</td>
+</tr>
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Max Speed</td>
+<td class="px-6 py-4">1.2 m/s (Safety regulated)</td>
+</tr>
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Sensors</td>
+<td class="px-6 py-4">LiDAR, RGB-D Camera, Ultrasonic Array</td>
+</tr>
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Connectivity</td>
+<td class="px-6 py-4">5G / WiFi 6 / Bluetooth 5.0</td>
+</tr>
+<tr class="hover:bg-[#202020]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Processor</td>
+<td class="px-6 py-4">Dual Nvidia Jetson Orin</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section>
+<h3 class="text-2xl font-bold text-white mb-6">Deployment Success</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all flex flex-col justify-between h-full">
+<div>
+<div class="mb-4">
+<span class="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded">Healthcare</span>
+</div>
+<p class="text-white text-lg font-medium italic mb-4">"Chester V1 has revolutionized our patient intake process, handling initial screenings with remarkable empathy."</p>
+</div>
+<div class="flex items-center gap-3 mt-4 border-t border-[#262626] pt-4">
+<div class="size-8 rounded-full bg-gray-600 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of hospital administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6B-XMm8LQeynUYb4BHpRArNsWk_XIzCoeyakRd22cu_rhukHI6It7koHE8TsIFq4N42J3BawGCX8v2Y2ehgJK6A6nUuq3UeHYTbvf8Cv1Xm9LhPxI7V8Rnn97K1tNC1XYYAWzbi0NZw0kWCx00SxYNMixI4UE-Su7JpgsHvHyoM1t9Hf1d_OCZrb-dXy1IDklkQLM34c_w1W5qDPHIC_pKpHySreKPCKY8ZIwYAco8UQ3GUFPx0RSO-nDt2tOlGbm4uO9DQHmvzc"/>
+</div>
+<div>
+<div class="text-white text-sm font-bold">Dr. Sarah Miller</div>
+<div class="text-[#9ca3af] text-xs">Admin, Mercy General</div>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-dark border border-[#262626] hover:border-primary/40 transition-all flex flex-col justify-between h-full relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity" data-alt="Abstract red network background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATIqbgx1ruPDr69Z4z629dtYVLr9AnXcWRozHSOswtpWm94rMpzRkKbRv2mzIws9quWCT0vBc15DzB6dZFcFmU-iQ23CSS1mhJSTynrZMFgW1BBUaqKhk0R4yrAEpZHxDjaVDTSCYLOr496qpSzvbwT1RDQECBF8LEG6bVOZ3ldFH3natplxMqmv95nX7wp2FyfkBgKwdNzAr1bGMNhWD1TR3uM7F1MofQ_taVbzHLTJw48Ns3rhWPA0YpMyptwrgq1jge892rEU8");'></div>
+<div class="relative z-10">
+<h4 class="text-white font-bold text-xl mb-2">Retail Assistant</h4>
+<div class="text-4xl font-bold text-primary mb-1">30%</div>
+<div class="text-[#9ca3af] text-sm mb-4">Increase in customer engagement</div>
+<a class="text-white text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Read Case Study <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div class="p-6 rounded-xl bg-[#8B0000]/10 border border-primary/20">
+<h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">folder_open</span>
+                    Documentation
+                </h3>
+<ul class="space-y-3">
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg bg-background-dark hover:bg-[#202020] transition-colors border border-[#262626] group" href="#">
+<div class="size-8 rounded flex items-center justify-center bg-red-500/20 text-red-400">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+</div>
+<div class="flex-1">
+<div class="text-white text-sm font-medium group-hover:text-primary transition-colors">Chester V1 User Manual</div>
+<div class="text-[#9ca3af] text-xs">PDF • 5.1 MB</div>
+</div>
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-white">download</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg bg-background-dark hover:bg-[#202020] transition-colors border border-[#262626] group" href="#">
+<div class="size-8 rounded flex items-center justify-center bg-blue-500/20 text-blue-400">
+<span class="material-symbols-outlined text-lg">integration_instructions</span>
+</div>
+<div class="flex-1">
+<div class="text-white text-sm font-medium group-hover:text-primary transition-colors">Chester SDK Docs</div>
+<div class="text-[#9ca3af] text-xs">Web • Developer Portal</div>
+</div>
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-white">open_in_new</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg bg-background-dark hover:bg-[#202020] transition-colors border border-[#262626] group" href="#">
+<div class="size-8 rounded flex items-center justify-center bg-yellow-500/20 text-yellow-400">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div class="flex-1">
+<div class="text-white text-sm font-medium group-hover:text-primary transition-colors">ROS 2 Packages</div>
+<div class="text-[#9ca3af] text-xs">GitHub Repository</div>
+</div>
+<span class="material-symbols-outlined text-[#9ca3af] group-hover:text-white">code</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-xl bg-surface-dark border border-[#262626]">
+<h3 class="text-lg font-bold text-white mb-2">Custom Integration?</h3>
+<p class="text-[#9ca3af] text-sm mb-4">Our robotics team can customize Chester's behavior for your specific environment.</p>
+<button class="w-full py-2 px-4 rounded-lg border border-[#262626] hover:bg-[#262626] text-white text-sm font-bold transition-colors">
+                    Contact Solutions Engineer
+                </button>
+</div>
+</div>
+</div>
+<footer class="mt-12 border-t border-[#262626] py-8 px-6 lg:px-12 text-center">
+<p class="text-[#64748b] dark:text-[#9ca3af] text-sm">© 2024 Chester Robotics. All rights reserved.</p>
+</footer>
+</div>
+</body></html>

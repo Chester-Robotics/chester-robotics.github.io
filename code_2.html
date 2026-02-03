@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chester Robotics - Product Gallery</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B0000","secondary-accent": "#D1D5DB","background-light": "#ffffff",
+                        "background-dark": "#0a0a0a","surface-dark": "#171717",
+                        "surface-hover": "#262626",
+                        "text-secondary": "#9ca3af",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<div class="relative flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-background-dark/95 backdrop-blur-sm">
+<div class="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 text-white cursor-pointer group">
+            <a href="index.html" class="flex items-center gap-4">
+            <div class="h-8 w-auto flex items-center justify-center text-primary group-hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-4xl">smart_toy</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] uppercase">Chester <span class="text-primary">Robotics</span></h2>
+            </a>
+        </div>
+<div class="hidden lg:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-gray-300 text-sm font-medium leading-normal hover:text-white hover:underline decoration-primary decoration-2 underline-offset-4 transition-all" href="index.html">Home</a>
+<a class="text-gray-300 text-sm font-medium leading-normal hover:text-white hover:underline decoration-primary decoration-2 underline-offset-4 transition-all" href="code_3.html">Chester V1</a>
+<a class="text-gray-300 text-sm font-medium leading-normal hover:text-white hover:underline decoration-primary decoration-2 underline-offset-4 transition-all" href="code_4.html">Solutions</a>
+                <a class="text-gray-300 text-sm font-medium leading-normal hover:text-white hover:underline decoration-primary decoration-2 underline-offset-4 transition-all" href="code_5.html">About</a>
+<a class="text-gray-300 text-sm font-medium leading-normal hover:text-white hover:underline decoration-primary decoration-2 underline-offset-4 transition-all" href="code_6.html">Contact</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-white hover:bg-gray-200 transition-colors text-black text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Pre-order V1</span>
+</button>
+</div>
+<div class="flex lg:hidden text-white">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-12">
+<div class="mb-8 flex flex-wrap gap-2">
+<a class="text-text-secondary hover:text-white transition-colors text-sm font-medium" href="#">Home</a>
+<span class="text-text-secondary text-sm font-medium">/</span>
+<span class="text-white text-sm font-medium">Models</span>
+</div>
+<div class="mb-12 flex flex-wrap justify-between gap-6 items-end border-b border-white/10 pb-8">
+<div class="flex max-w-3xl flex-col gap-4">
+<h1 class="text-white text-5xl sm:text-6xl font-black leading-none tracking-[-0.033em] uppercase">
+                        The Next <span class="text-primary">Evolution</span>
+</h1>
+<p class="text-text-secondary text-xl font-light leading-relaxed max-w-xl">
+                        Intelligent robotics designed with sophistication. From our flagship Chester V1 to specialized industrial units.
+                    </p>
+</div>
+</div>
+<div class="mb-10 overflow-x-auto">
+<div class="flex gap-3 pb-2 min-w-max">
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary px-6 transition-transform active:scale-95 shadow-[0_0_15px_rgba(139,0,0,0.4)]">
+<p class="text-white text-sm font-bold tracking-wide uppercase">All Series</p>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 px-6 hover:bg-white/10 transition-colors active:scale-95 group">
+<p class="text-text-secondary group-hover:text-white text-sm font-medium tracking-wide uppercase">Domestic</p>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 px-6 hover:bg-white/10 transition-colors active:scale-95 group">
+<p class="text-text-secondary group-hover:text-white text-sm font-medium tracking-wide uppercase">Medical</p>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-white/10 px-6 hover:bg-white/10 transition-colors active:scale-95 group">
+<p class="text-text-secondary group-hover:text-white text-sm font-medium tracking-wide uppercase">Industrial</p>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+<div class="group flex flex-col lg:col-span-2 md:col-span-2 rounded-2xl bg-surface-dark border border-white/10 overflow-hidden hover:border-primary hover:shadow-[0_0_40px_rgba(139,0,0,0.2)] transition-all duration-500 relative">
+<div class="absolute top-0 right-0 p-6 z-10">
+<span class="inline-flex items-center rounded-full bg-primary/90 backdrop-blur-md px-3 py-1 text-xs font-bold text-white tracking-widest uppercase shadow-lg">New Release</span>
+</div>
+<div class="flex flex-col md:flex-row h-full">
+<div class="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+<div class="absolute inset-0 bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-700 z-0" data-alt="Chester V1 Robot - Front View" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBh7tZbmpRuo7jrSIkgxP8-w6vsiWPEcZqgcVkEy1SnR6__l_4rgDlB6CMdKNHjx0vrqD1zCv-mzczVBcQfSme3Jf8ftsl1womZM6ZBiV14rwCFWxEbMohjRoCECxojX981-OG3oJsFacxnqikUNqkjIZVc7uEdtAlZxjx_tjvcJOAquPBw6rTzaekvcfXsP2ruwX482QIcB4gZWF2_k9MAvhvdmOHsxX5n7Mjcj-oOJ1lHJWYm0jmHVUBW_APfbyvvrbqrZh8H9FE");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex flex-col justify-center gap-6 p-8 md:p-10 md:w-1/2 bg-[#0F0F0F]">
+<div>
+<h3 class="text-white text-4xl font-bold leading-none tracking-[-0.02em] mb-2 uppercase">Chester <span class="text-primary">V1</span></h3>
+<p class="text-white/60 text-sm font-medium tracking-widest uppercase">General Purpose Assistant</p>
+</div>
+<div class="space-y-4">
+<p class="text-gray-400 text-base font-normal leading-relaxed">
+                                    The future of home robotics is here. Chester V1 combines advanced AI with a friendly, approachable design. Capable of complex manipulation tasks, coffee preparation, and seamless human interaction.
+                                </p>
+<ul class="text-gray-500 text-sm space-y-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> 6-Axis Articulated Arm</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Emotional AI Interface</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> 8hr Battery Life</li>
+</ul>
+</div>
+<div class="pt-4 mt-auto">
+<button class="w-full flex cursor-pointer items-center justify-center gap-2 rounded-lg h-12 px-6 bg-white hover:bg-gray-200 text-black text-sm font-bold uppercase tracking-wider transition-all duration-200">
+                                    Explore Chester V1 <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-surface-dark border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-900">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Chester Robot Face Close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGc0HSrXonePhsoeNKUnRJxgQYRfpZhq85rKpnoXcquMdzbKEPOkY-yj0rWxxX4NqhNuyEXJpAHHUj13FmM02ZUS0x9_Nfyefb7TL-oVvK1IAGuR9LlsFc6kcLhroYI13BD7_aq_j8kqbFJ2sNTz5tugwAJBeswevi9MnqzTtq7uNRnmJTpyerI9jKZeP04nbatDbmDoT3h4r4y-Ygi_yh9Xs1UeD7YECe2RaQzkosVOQsCfVp3LRWvq7yiupwHATZQv8Fu7wEDwI");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center rounded bg-black/50 backdrop-blur-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Interaction</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 grow">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight uppercase">Chester <span class="text-gray-500">Head Unit</span></h3>
+<p class="text-primary text-xs font-bold tracking-widest uppercase mt-1">Standalone Module</p>
+</div>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-3">
+                            The expressive face of the Chester series is available as a standalone desktop companion. Features the same powerful emotive engine in a compact form factor.
+                        </p>
+<div class="mt-auto pt-4 border-t border-white/5">
+<button class="w-full group-hover:text-white text-gray-400 text-sm font-bold flex items-center justify-between transition-colors">
+                                View Specs <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-surface-dark border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-900">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Futuristic yellow industrial robotic arm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIYcrodyqVC0QRdcwHpZaRz6O85BZikRs2vzqSxaM5r5fh1-Mlr0EQOoAdm8lf4NzEd4O4k6FCAvwJIZBdEuro1J1AQO1kwnJDziFh-pyuQTEczXNOExqicY3kH1EsDqgJA_0C6923sS10gxanFndUs8cLJOFnio25I2Upmt9JbzzMmliRJzcagAd4OebsOx-MPSCZrtImPgtY-qg640L-huIsdi4-kb3OjhNi1uy6DY89vSioYPNsbluuk9oL8j8th_-zSzag8oA");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center rounded bg-black/50 backdrop-blur-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Industrial</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 grow">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight uppercase">Titan <span class="text-gray-500">X-10</span></h3>
+<p class="text-primary text-xs font-bold tracking-widest uppercase mt-1">Heavy Assembly</p>
+</div>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-3">
+                             High-precision industrial arm designed for micro-electronics manufacturing. Features 6-axis articulation and 0.02mm repeatability.
+                        </p>
+<div class="mt-auto pt-4 border-t border-white/5">
+<button class="w-full group-hover:text-white text-gray-400 text-sm font-bold flex items-center justify-between transition-colors">
+                                View Specs <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-surface-dark border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-900">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Sleek white autonomous medical robot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEcwC7On2XRonF-SFGDg6FpXXKaafbb-0GKywFKhngjWrjc8OY6kGbYkDDI2imPr2FLV6raBq9sh4P-JH5jLTNnpwGHxO-DdRbQHbJrooSfyg4jn0b6jrWYeZbRiDCumGpWNX8EkSR84kP4Ap8rHJFKLPHvtDjqJMh5ZJOJi6ogaingLmfznhufg4YPRg1qXxCIX7NggMz34vT51vVM8MIfdBp9clgjg17uXTMomoXFxoB5slnI-rHz_vrwqbd8J_1JrPXsu8ZF74");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center rounded bg-black/50 backdrop-blur-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Healthcare</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 grow">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight uppercase">MediBot <span class="text-gray-500">Alpha</span></h3>
+<p class="text-primary text-xs font-bold tracking-widest uppercase mt-1">Surgical Assistant</p>
+</div>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-3">
+                            Assisted surgical system providing surgeons with enhanced vision, precision, and control. Compact footprint for modern ORs.
+                        </p>
+<div class="mt-auto pt-4 border-t border-white/5">
+<button class="w-full group-hover:text-white text-gray-400 text-sm font-bold flex items-center justify-between transition-colors">
+                                View Specs <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col rounded-2xl bg-surface-dark border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-300">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-900">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" data-alt="Warehouse logistics robot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0JvWZZiJ7MH53xDs73CbbW_RRHPgFc6thhytBFwzVuPuf7oTCLNuXEo7VgE05TGLdcaSDB6JWsR5Ow3rx1d1jrvetPQMtmOS8VSawX8OXJ0ZbH-o27zf9311WPOimuvlO9NlvKLDmqngoCB-U4gy2JHicw5ek1HpCOzdAQruCgkqZF3pXeLrR4dnzPKee6DuQobVC-l1SP7Z9bdWB8S2iqN6mL_L18GkjX9Edoq_6W2whLb7CaORKSqn2XrK8zLJAgdBGFcqMXw8");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4">
+<span class="inline-flex items-center rounded bg-black/50 backdrop-blur-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Logistics</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 grow">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight uppercase">Courier <span class="text-gray-500">V2</span></h3>
+<p class="text-primary text-xs font-bold tracking-widest uppercase mt-1">Autonomous Transport</p>
+</div>
+<p class="text-text-secondary text-sm font-normal leading-relaxed line-clamp-3">
+                            Autonomous warehouse transport solution with LiDAR navigation. Capable of hauling up to 500kg payloads safely alongside humans.
+                        </p>
+<div class="mt-auto pt-4 border-t border-white/5">
+<button class="w-full group-hover:text-white text-gray-400 text-sm font-bold flex items-center justify-between transition-colors">
+                                View Specs <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-black border-t border-white/10 py-16">
+<div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-12">
+<div class="flex flex-col gap-6 max-w-sm">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary text-3xl">smart_toy</span>
+<span class="text-2xl font-bold tracking-tight uppercase">Chester Robotics</span>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed">Pioneering the next generation of intelligent machines. We build robots that enhance human potential through precision engineering and empathetic design.</p>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-16">
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-xs font-bold uppercase tracking-widest">Company</h4>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">About Us</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Careers</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Press</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-xs font-bold uppercase tracking-widest">Support</h4>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Help Center</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Documentation</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Warranty</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white text-xs font-bold uppercase tracking-widest">Legal</h4>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Privacy</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Terms</a>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-gray-600 text-xs">© 2024 Chester Robotics. All rights reserved.</p>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<p class="text-gray-500 text-xs font-mono">Systems Operational</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
